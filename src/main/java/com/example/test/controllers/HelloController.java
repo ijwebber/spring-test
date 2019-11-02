@@ -11,13 +11,18 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class HelloController {
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
+    public String helloForm() {
+        return "helloform";
+    }
+
+    @RequestMapping(value = "/hello", method = RequestMethod.POST)
     public String index(HttpServletRequest request, Model model) {
 
         //get from the ? part of the url
         String name = request.getParameter("name");
 
-        if (name == null) {
+        if (name == null || name == "") {
             name = "world";
         }
 
