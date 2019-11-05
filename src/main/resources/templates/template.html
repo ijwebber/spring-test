@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+    <head th:fragment="head">
+        <meta charset="UTF-8">
+        <title th:text="${title}">Hello</title>
+
+        <link th:href="@{/css/styles.css}" rel="stylesheet" />
+        <script th:src="@{/js/script.js}"></script>
+
+        <title>Hello</title>
+    </head>
+
+    <p th:fragment="footer">
+        Copyright &copy; Isaac Webber
+    </p>
+
+</html>
