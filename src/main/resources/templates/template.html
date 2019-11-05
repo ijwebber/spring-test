@@ -2,7 +2,8 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
     <head th:fragment="head">
         <meta charset="UTF-8">
-        <title th:text="${title}">Hello</title>
+        <!--/*@thymesVar id="title" type="java.lang.String"*/-->
+        <!--<title th:text="${title}">Hello</title>-->
 
         <link th:href="@{/css/styles.css}" rel="stylesheet" />
         <script th:src="@{/js/script.js}"></script>
@@ -11,7 +12,7 @@
     </head>
 
     <p th:fragment="footer">
-        Copyright &copy; Isaac Webber
+        Made By Isaac Webber
     </p>
 
 </html>

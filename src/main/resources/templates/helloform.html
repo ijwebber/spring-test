@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-    <head>
-        <title>Hello Form</title>
-    </head>
+    <head th:replace="template :: head"></head>
     <body>
         <form method="post" action="/hello">
-            <input type="text" name="name"></input>
+            <input type="text" name="name"/>
             <button type="submit">Say Hello</button>
         </form>
     </body>
