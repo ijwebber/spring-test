@@ -3,14 +3,16 @@
     <head th:fragment="head">
         <meta charset="UTF-8">
         <!--/*@thymesVar id="title" type="java.lang.String"*/-->
-        <!--<title th:text="${title}">Hello</title>-->
+        <title th:text="${title}">Hello</title>
 
         <link th:href="@{/css/styles.css}" rel="stylesheet" />
         <script th:src="@{/js/script.js}"></script>
 
-        <title>Hello</title>
+        <!--<title>Hello</title>-->
     </head>
-
+    <div th:fragment="header" id="header">
+        <h1 class="header">Hello Page</h1>
+    </div>
     <p th:fragment="footer">
         Made By Isaac Webber
     </p>

@@ -12,7 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 public class HelloController {
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
-    public String helloForm() {
+    public String helloForm(Model model) {
+        model.addAttribute("title", "Hello: Form");
         return "helloform";
     }
 
@@ -26,6 +27,7 @@ public class HelloController {
             name = "world";
         }
 
+        model.addAttribute("title", "Hello: Response");
         model.addAttribute("message", HelloMessage.getMessage(name));
         return "hello";
     }
