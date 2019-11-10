@@ -2,6 +2,7 @@ package com.example.test.controllers;
 
 import com.example.test.models.HelloLog;
 import com.example.test.models.HelloMessage;
+import com.example.test.models.dao.HelloLogDao;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class HelloController {
+
+    private HelloLogDao helloLogDao;
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public String helloForm(Model model) {
