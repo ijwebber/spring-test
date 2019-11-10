@@ -3,6 +3,7 @@ package com.example.test.controllers;
 import com.example.test.models.HelloLog;
 import com.example.test.models.HelloMessage;
 import com.example.test.models.dao.HelloLogDao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class HelloController {
 
+    @Autowired //injects an instance of this interface
     private HelloLogDao helloLogDao;
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
@@ -32,6 +34,7 @@ public class HelloController {
         }
 
         HelloLog log = new HelloLog(name);
+        helloLogDao.save(log);
 
         model.addAttribute("title", "Hello: Response");
         model.addAttribute("message", HelloMessage.getMessage(name));

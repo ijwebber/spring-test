@@ -5,7 +5,7 @@ import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
-@Table(name = "helloLog")
+@Table(name = "hellolog")
 public class HelloLog {
 
     private String name;
