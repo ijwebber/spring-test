@@ -7,6 +7,14 @@ public class HelloLog {
     private String name;
     private Date timestamp;
 
+    public HelloLog(String name) {
+        this.name = name;
+        timestamp = new Date();
+    }
+
+    //no argument-constructor
+    public HelloLog(){}
+
     public String getName() {
         return name;
     }

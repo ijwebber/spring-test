@@ -1,5 +1,6 @@
 package com.example.test.controllers;
 
+import com.example.test.models.HelloLog;
 import com.example.test.models.HelloMessage;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,6 +27,8 @@ public class HelloController {
         if (name == null || name == "") {
             name = "world";
         }
+
+        HelloLog log = new HelloLog(name);
 
         model.addAttribute("title", "Hello: Response");
         model.addAttribute("message", HelloMessage.getMessage(name));
