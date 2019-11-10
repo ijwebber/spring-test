@@ -44,10 +44,8 @@ public class HelloController {
 
     @RequestMapping(value = "/log")
     public String log(Model model) {
-        // get data out of db
         List<HelloLog> logs = helloLogDao.findAll();
 
-        // put data into template
         model.addAttribute("logs", logs);
         return "log";
     }
