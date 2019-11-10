@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @Controller
 public class HelloController {
@@ -39,5 +40,15 @@ public class HelloController {
         model.addAttribute("title", "Hello: Response");
         model.addAttribute("message", HelloMessage.getMessage(name));
         return "hello";
+    }
+
+    @RequestMapping(value = "/log")
+    public String log(Model model) {
+        // get data out of db
+        List<HelloLog> logs = helloLogDao.findAll();
+
+        // put data into template
+        model.addAttribute("logs", logs);
+        return "log";
     }
 }
